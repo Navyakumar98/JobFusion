@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import RoleSelection from './components/RoleSelection';
 import UploadForm from './components/JobSeeker/UploadForm';
 import RecruiterForm from './components/Recruiter/RecruiterForm';
@@ -24,7 +24,6 @@ const App = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <Router>
       <Routes>
         {/* Home Page: always accessible */}
         <Route path="/" element={<Home />} />
@@ -40,7 +39,6 @@ const App = () => {
         <Route path="/jobseeker" element={user ? <UploadForm /> : <Navigate to="/auth" />} />
         <Route path="/recruiter" element={user ? <RecruiterForm /> : <Navigate to="/auth" />} />
       </Routes>
-    </Router>
   );
 };
 

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const About = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="min-h-screen bg-blue-950 text-white px-6 py-12 flex flex-col items-center">
         <motion.h1
           className="text-4xl font-bold mb-6 text-center"
