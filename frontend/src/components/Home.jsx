@@ -1,42 +1,27 @@
-// src/components/HomePage.jsx
 import React from 'react';
-import { motion } from 'framer-motion';
-import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
     <>
-      <Navbar />
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-blue-600 text-white px-6 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-4xl sm:text-5xl font-bold mb-4"
-        >
-          Welcome to JobFusion 
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          className="text-lg sm:text-xl max-w-2xl"
-        >
-          Your all-in-one platform for resume analysis, job recommendations, and recruiter automation.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="mt-8"
-        >
-          <a
-            href="/auth"
-            className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-100 transition"
+  
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center pt-16 pb-12"> 
+
+        <div className="text-center">
+          <h1 className="text-5xl font-extrabold text-gray-900 mb-4">
+            Welcome to JobFusion
+          </h1>
+          <p className="text-lg text-gray-700 max-w-lg mx-auto mb-8">
+            Your all-in-one platform for resume analysis, job recommendations, and recruiter automation.
+          </p>
+          
+          <Link
+            to="/auth"
+            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
           >
             Get Started
-          </a>
-        </motion.div>
+          </Link>
+        </div>
       </div>
     </>
   );
