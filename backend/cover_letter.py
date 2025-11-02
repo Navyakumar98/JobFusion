@@ -8,7 +8,7 @@ nltk.download('stopwords')
 nltk.download('punkt_tab') 
 
 POSSIBLE_SKILLS = ["python", "data science", "machine learning", "ai", "deep learning", "java", "sql", "excel", "tableau", "tensorflow", "keras", "r"]
-JOB_ROLES = ["data scientist", "software engineer", "machine learning engineer", "data analyst", "ai engineer", "business analyst"]
+JOB_ROLES = ["data scientist", "software engineer", "machine learning engineer", "data analyst", "ai engineer", "business analyst","java developer"]
 
 def extract_skills(resume_text):
     stop_words = set(stopwords.words('english'))

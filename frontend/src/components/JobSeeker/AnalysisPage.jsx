@@ -113,7 +113,7 @@ const AnalysisPage = () => {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {/* --- LEFT CARD: Analysis & Insights --- */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl shadow-xl border border-blue-200">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Analysis & Insights</h3>
               
               {/* ATS Score */}
@@ -149,6 +149,7 @@ const AnalysisPage = () => {
 
             {/* --- RIGHT CARD: Editable Cover Letter --- */}
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl shadow-xl border border-blue-200">
+            {/* <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-2xl shadow-xl border border-gray-200"> */}
               <h3 className="text-2xl font-semibold text-blue-900 mb-4 flex items-center gap-2">
                  Editable Cover Letter
               </h3>
