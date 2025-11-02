@@ -5,7 +5,7 @@ import HomeContent from './HomeContent';
 const HomePage = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <HomeContent />
     </>
   );
