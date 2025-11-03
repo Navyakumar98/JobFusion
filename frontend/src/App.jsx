@@ -4,11 +4,13 @@ import RoleSelection from './components/RoleSelection';
 import UploadForm from './components/JobSeeker/UploadForm';
 import RecruiterForm from './components/Recruiter/RecruiterForm';
 import AuthForm from './components/AuthForm';
+import AuthFormNew from './components/AuthFormNew';
 import Home from './components/Home';
 import About from './components/About';
 import { auth } from './firebase';
 import AnalysisPage from './components/JobSeeker/AnalysisPage';
 import RecruiterPage from './components/Recruiter/RecruiterPage';
+import Header from './components/Header';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -26,15 +28,18 @@ const App = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
+    <>
+      <Header user={user}/>
+
       <Routes>
         {/* Home Page: always accessible */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home user={user}/>} />
 
         {/* About: always accessible */}
         <Route path="/about" element={<About />} />
 
         {/* Login/Signup */}
-        <Route path="/auth" element={<AuthForm />} />
+        <Route path="/auth" element={<AuthFormNew />} />
 
         {/* Protected Routes */}
         <Route path="/select-role" element={user ? <RoleSelection /> : <Navigate to="/auth" />} />
@@ -43,6 +48,7 @@ const App = () => {
         {/* <Route path="/recruiter" element={user ? <RecruiterForm /> : <Navigate to="/auth" />} /> */}
         <Route path="/recruiter" element={user ? <RecruiterPage /> : <Navigate to="/auth" />} />
       </Routes>
+   </>   
   );
 };
 

@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { getAuth, signOut } from 'firebase/auth';
 
-const Navbar = () => {
+const Header = ({user}) => {
+  console.log("navbar user:", user)
   const auth = getAuth();
   const navigate = useNavigate();
-  
-  const [user, setUser] = useState(auth.currentUser);
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      console.log("navbar user", currentUser);
-    });
-
-    return () => unsubscribe();
-  }, [auth]);
-
 
   const handleLogout = () => {
     signOut(auth)
@@ -36,10 +25,9 @@ const Navbar = () => {
         <Link to="/about" className="hover:text-blue-300 transition">About</Link>
         {user ? (
           <>
-            {/* <span className="text-gray-300">({user.email})</span> */}
+            <span className="text-gray-300">({user.email})</span>
             <button 
               onClick={handleLogout} 
-              // className="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded transition"
               className="hover:text-blue-300 transition"
             >
               Logout
@@ -53,4 +41,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
