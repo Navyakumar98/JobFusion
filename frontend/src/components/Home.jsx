@@ -14,6 +14,8 @@ const Home = ({user, role}) => {
       return "/jobseeker";
     } else if (role === 'recruiter') {
       return "/recruiter";
+    } else if (role === 'admin'){
+      return "/select-role";
     } else {
       // Fallback if role is null
       return "/auth"; 
