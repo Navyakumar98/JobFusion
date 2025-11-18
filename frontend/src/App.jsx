@@ -69,9 +69,9 @@ const App = () => {
         {/* Protected Routes */}
         <Route path="/select-role" element={role === 'admin' ? <RoleSelection /> : <Navigate to="/auth" />} />
         {/* <Route path="/jobseeker" element={user ? <UploadForm /> : <Navigate to="/auth" />} /> */}
-        <Route path="/jobseeker" element={role === 'jobSeeker' ? <AnalysisPage /> : <Navigate to="/auth" />} />
+        <Route path="/jobseeker" element={<AnalysisPage />} />
         {/* <Route path="/recruiter" element={user ? <RecruiterForm /> : <Navigate to="/auth" />} /> */}
-        <Route path="/recruiter" element={role === 'recruiter' ? <RecruiterPage /> : <Navigate to="/auth" />} />
+        <Route path="/recruiter" element={ <RecruiterPage /> } />
       </Routes>
    </>   
   );

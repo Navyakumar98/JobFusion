@@ -17,7 +17,7 @@ const AuthFormNew = () => {
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
   const [details, setDetails] = useState('');
-  const [role, setRole] = useState('jobSeeker'); // 'jobSeeker' or 'recruiter'
+  const [role, setRole] = useState('jobSeeker'); 
   
   const [error, setError] = useState(null);
 
